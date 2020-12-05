@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// me importo uikit!!!
+import UIkit from "uikit";
+import Icons from "uikit/dist/js/uikit-icons";
+import "uikit/dist/css/uikit.min.css"
+//importamos la configuracion de las rutas!!
+import { BrowserRouter } from "react-router-dom"
+//usamos uikit para los iconos
+UIkit.use(Icons)
 
-ReactDOM.render(
-  <React.StrictMode>
+//Declaramos el WithRouter para usar las rutas!!!
+//JSX
+const WithRouter = ()=>(
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>
+)
+ReactDOM.render(
+    <WithRouter />,
   document.getElementById('root')
 );
 
