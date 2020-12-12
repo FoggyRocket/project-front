@@ -1,9 +1,12 @@
 import React, {Component} from "react";
 import { login } from "../../services/userWs";
 import { Link } from 'react-router-dom';
-
+import AppContext from '../../AppContext';
 
 export default class AuthContainer extends Component {
+    //usar static para poder usar context
+    static contextType = AppContext;
+
     //state === minibase de datos para la clase e hijos en caso de que los herede (o se los pase)
     state = {
       data:{}
@@ -30,7 +33,17 @@ export default class AuthContainer extends Component {
             //aqui andetro si todo sale bien 
             //monstramos un mensaje y mandamos a la siguiente seccion
             this.setState({ data:{}})
-            console.log("Felicidades",response)
+            //vamos a guardar los datos en local para ya no volver a realizar 
+            //una peticion 
+            //estructura basica localSotrage.metodo("llave",JSON.stringyfy("dylan")) //PURO TEXTO
+            // si dato es un objeto o arreglo hay que convertilo a texto plano!! JSON.stringyfy(dato)
+           
+            localStorage.setItem( "user",JSON.stringify( response.data.user ) )
+            //setearemos el usuario hasta el app D:!!
+            //destoructurando
+            
+            this.context.setUser(response.data.user)
+            console.log( "Felicidades", JSON.stringify(response.data.user) )
 
         }).catch((error)=>{
             console.log("hay un error",error)
@@ -43,6 +56,7 @@ export default class AuthContainer extends Component {
         //aque podemos declarar const var y let
         const {handleChange, onSubmit} = this;
         const {data} = this.state;
+
         return(
             <section className="uk-section">
                 <div className="uk-container uk-flex uk-flex-center">
