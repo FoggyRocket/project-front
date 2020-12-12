@@ -19,10 +19,10 @@ export default class PropertyContainer extends Component {
     //utilizamos el ciclo de vida para cargar los datos de la propiedad
     componentWillMount(){
         //valida que exista un usuario de lo contrario redirect a login 
-        const {user} = this.context
+        const {state} = this.context
         const {history} = this.props
     
-        if(user === null || user === undefined) {
+        if (!Object.keys(state.user).length) {
             history.push("/login")
             return false
         }//<--- para validar al ususario 
