@@ -18,13 +18,16 @@ export default class PropertyContainer extends Component {
 
     //utilizamos el ciclo de vida para cargar los datos de la propiedad
     componentWillMount(){
+        //valida que exista un usuario de lo contrario redirect a login 
         const {user} = this.context
         const {history} = this.props
-        console.log("el usuarui",user)
+    
         if(user === null || user === undefined) {
             history.push("/login")
             return false
-        }
+        }//<--- para validar al ususario 
+
+        ///
         //utilizamos props de rutas match ya que mandaremos datos por medio del id
         const {id} = this.props.match.params;
         //si viene un id en los paramas realizamos un peticion al backend
