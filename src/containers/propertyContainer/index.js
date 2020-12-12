@@ -74,7 +74,7 @@ export default class PropertyContainer extends Component {
             //recorremos el arreglo y constuimos la notificacion (importar buildNotification)
             //error = al mensaje, "danger" = al color de la notificacion, close = si tiene o no metodo para cerra
         
-            errors.map((error) => buildNotification(error,"danger",close))
+            errors.map((error) => buildNotification(error,"danger","close"))
         })
     }
     render(){
