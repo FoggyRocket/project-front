@@ -9,7 +9,7 @@ export const getProperties = () => {
 };
 
 export const getPropertiesByUser = (id) => {
-  return _axios.get(`/property?owner=${id}`);
+  return _axios.get(`/property?_owner=${id}`);
 };
 
 export const getPropertyDetail = (id) => {

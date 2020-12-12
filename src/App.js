@@ -40,7 +40,7 @@ class  App extends Component {
     this.setState({ userProperties })
   }
 
-  setUserReservation=(userReservation)=>{
+  setUserReservations =(userReservation)=>{
     this.setState({ userReservation })
   }
 
@@ -62,7 +62,7 @@ class  App extends Component {
       setUser,
       setProperties,
       setUserProperties,
-      setUserReservation,
+      setUserReservations,
       addProperty
     } = this
 
@@ -74,7 +74,7 @@ class  App extends Component {
           setUser,
           setProperties,
           setUserProperties,
-          setUserReservation,
+          setUserReservations,
           addProperty
         }}
       >

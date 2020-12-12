@@ -1,5 +1,8 @@
 //normalizar nos crea un objeto con llave de id propiedo del mismo objeto
 // se utiliza un reducer para hacer la operacion mas sencilla
+
+// RESPUESTA SERVIDOR  = [{...},{...}]
+//NORMALIZAR DATA  =  { HDAUIHDIUASD:{...},DIASJDIJAS:{...}}
 export const normalizeData = (arr) => {
     return arr.reduce((acc,item)=>{
         return {...acc,[item._id]:item}

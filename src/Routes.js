@@ -4,6 +4,7 @@ import AuthContainer from "./containers/authContainer/AuthContainer";
 import SignupContainer from "./containers/authContainer/SignupContainer";
 import HomeContainer from "./containers/homeContainer";
 import PropertyContainer from "./containers/propertyContainer";
+import UserProfile from "./containers/userProfile";
 
 
 
@@ -15,6 +16,8 @@ const Routes = () => (
         <Route exact path="/signup"  component={SignupContainer}   />
         <Route exact path="/property/new"  component={PropertyContainer}   />
         <Route exact path="/property/:id"  component={PropertyContainer}   />
+        <Route exact path="/profile"  component={UserProfile}   />
+
 
 
     </Switch>

@@ -18,8 +18,14 @@ export default class PropertyContainer extends Component {
 
     //utilizamos el ciclo de vida para cargar los datos de la propiedad
     componentWillMount(){
+        const {user} = this.context
+        const {history} = this.props
+        console.log("el usuarui",user)
+        if(user === null || user === undefined) {
+            history.push("/login")
+            return false
+        }
         //utilizamos props de rutas match ya que mandaremos datos por medio del id
-
         const {id} = this.props.match.params;
         //si viene un id en los paramas realizamos un peticion al backend
         if(id){
@@ -61,7 +67,8 @@ export default class PropertyContainer extends Component {
         //realizamos un update o creamos una propiedad
 
         const action = id ? updateProperty : createProperty //<---- son ws(webservices) chequen si se importaron
-        const params = id ? (property, id) : { property } // creamos los parametros depeiendo de la accion 
+        const params = id ? {property, id} : { property } // creamos los parametros depeiendo de la accion 
+
         action(params)
         .then((res)=>{
             const {result} = res.data
