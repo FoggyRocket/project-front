@@ -36,6 +36,7 @@ class UserProfile extends Component {
           setUserProperties(properties);
         });
         getUserReservations().then((res) => {
+            console.log("res",res)
           const { result } = res.data;
           const reservations = normalizeData(result);
           setUserReservations(reservations);
@@ -69,6 +70,8 @@ class UserProfile extends Component {
   
     render() {
       const { user, userProperties, userReservations } = this.context.state;
+
+      console.log("user",userReservations)
       return (
         <div className="uk-section">
           <div className="uk-container">

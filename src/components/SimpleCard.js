@@ -14,7 +14,7 @@ const SimpleCard = ({
   deleteItem,
   isReservation,
   guest_number,
-  property,
+  _property,
   checkin,
   checkout,
 }) => (
@@ -25,17 +25,17 @@ const SimpleCard = ({
       id={_id}
       message={
         isReservation
-          ? `Delete reservation in ${property.title}`
+          ? `Delete reservation in ${_property.title}`
           : `Delete ${title}?`
       }
     />
     <div className="uk-grid">
       <div className="uk-width-1-3">
-        <Slider images={isReservation ? property.images : images} />
+        <Slider images={isReservation ? _property.images : images} />
       </div>
       <div className="uk-width-expand uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-flex uk-flex-column uk-flex-around">
         <div className="simple-card-title uk-text-lead uk-margin-small-top uk-margin-small-bottom">
-          {isReservation ? property.title : title}
+          {isReservation ? _property.title : title}
         </div>
         {isReservation ? (
           <div>

@@ -13,7 +13,7 @@ class  App extends Component {
     user : JSON.parse( localStorage.getItem("user")   )  || {},
     properties: {},
     userProperties: {},
-    userReservation: {}
+    userReservations: {}
   }
   //Simplemente borra la cookie 
   // y nos mueve al login! borrando el usuario!! 
@@ -40,8 +40,8 @@ class  App extends Component {
     this.setState({ userProperties })
   }
 
-  setUserReservations =(userReservation)=>{
-    this.setState({ userReservation })
+  setUserReservations =(userReservations)=>{
+    this.setState({ userReservations })
   }
 
   addProperty = (property) =>{

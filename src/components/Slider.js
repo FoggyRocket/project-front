@@ -7,11 +7,11 @@ const Slider = ({ images }) => (
     uk-slideshow="animation: fade;ratio: 2:2;max-height: 500"
   >
     <ul className="uk-slideshow-items">
-      {images.map((image, index) => (
+      {images != undefined ? images.map((image, index) => (
         <li key={index}>
           <img src={image} alt="" uk-cover="true" />
         </li>
-      ))}
+      )) : null}
     </ul>
 
     <a

@@ -43,7 +43,7 @@ export default class AuthContainer extends Component {
             //destoructurando
             
             this.context.setUser(response.data.user)
-            console.log( "Felicidades", JSON.stringify(response.data.user) )
+            this.props.history.push("/")
 
         }).catch((error)=>{
             console.log("hay un error",error)

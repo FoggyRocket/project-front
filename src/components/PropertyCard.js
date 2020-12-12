@@ -14,11 +14,11 @@ const PropertyCard = ({
   price,
   capacity,
   createdAt,
-  owner,
+  _owner,
   userId,
   isDemo = false,
 }) => {
-  const isOwner = userId === owner?._id;
+  const isOwner = userId === _owner?._id;
   return (
     <div className="uk-margin-small-bottom">
       <div className="uk-card uk-card-default">
@@ -30,13 +30,13 @@ const PropertyCard = ({
                   className="uk-border-circle"
                   width="40"
                   height="40"
-                  alt={owner?.name}
-                  src={owner?.profile_picture}
+                  alt={_owner?.name}
+                  src={_owner?.profile_picture}
                 />
               </div>
               <div className="uk-width-expand">
                 <h3 className="uk-card-title uk-margin-remove-bottom">
-                  {owner?.name}
+                  {_owner?.name}
                 </h3>
                 <p className="uk-text-meta uk-margin-remove-top">Propietario</p>
               </div>
