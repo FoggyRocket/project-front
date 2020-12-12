@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import InputField from "./InputField";
-import { createReservation } from "../services/reservationServices";
+import { createReservation } from "../services/reservationWs";
 import { buildNotification } from "../utils/notification";
-import AppContext from "../../../AppContext";
+import AppContext from "../AppContext";
 import UIkit from "uikit";
 
 class ReservationModal extends Component {

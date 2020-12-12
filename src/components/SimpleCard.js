@@ -1,9 +1,9 @@
 import React from "react";
-import Slider from "../Slider";
-import ConfirmationModal from "../ConfirmationModal";
+import Slider from "./Slider";
+import ConfirmationModal from "./ConfirmationModal";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
-import ReservationModal from "../ReservationModal";
+import ReservationModal from "./ReservationModal";
 
 const SimpleCard = ({
   _id,

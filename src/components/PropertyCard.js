@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "../Slider";
+import Slider from "./Slider";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Link } from "react-router-dom";
